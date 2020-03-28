@@ -15,7 +15,7 @@ const mapState = ({feed}) => ({
 });
 
 const mapDispatch = dispatch => ({
-  // init login page
+  // init login page 
 })
 
 export default connect(mapState, mapDispatch)(LoginScreen)
