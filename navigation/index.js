@@ -1,11 +1,11 @@
-import * as React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 // local files
-import AppNavigation from './app.navigation'
-import AuthNavigation from './auth.navigation'
+import AppNavigation from './app.navigation';
+import AuthNavigation from './auth.navigation';
 
 export default function Navigation(props) {
-  const { isUser } = props
+  const { isUser } = props;
 
   return (
     <NavigationContainer>
