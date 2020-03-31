@@ -21,7 +21,7 @@ function FeedScreen(props) {
     <HeaderComponent />
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-        {feed.data.map(item => <Text key={item.id}>TITLE: {item.title}</Text>)}
+        <Text>Feed screen</Text>
       </ScrollView>
     </SafeAreaView>
   </React.Fragment>
@@ -29,12 +29,10 @@ function FeedScreen(props) {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // marginTop: Constants.statusBarHeight,
+    flex: 1
   },
   scrollView: {
     paddingHorizontal: 15,
-    // justifyContent: 'flex-start'
   },
   text: {
     fontSize: 42,
@@ -49,7 +47,7 @@ const mapState = ({ feed }) => ({
 });
 
 const mapDispatch = dispatch => ({
-  initData: () => dispatch(initFeed())
-})
+  initData: () => dispatch(initFeed)
+});
 
 export default connect(mapState, mapDispatch)(FeedScreen)

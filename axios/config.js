@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://jsonplaceholder.typicode.com/' // TODO CHANGE URL
+export const BASE_URL = 'https://jsonplaceholder.typicode.com/'; // TODO CHANGE URL
