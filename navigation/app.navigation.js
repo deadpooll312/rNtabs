@@ -6,6 +6,7 @@ import FeedScreen from '../screens/feed';
 import HomeScreen from '../screens/home';
 import CalendarScreen from '../screens/calendar';
 import { Ionicons } from '@expo/vector-icons';
+import { blue, black } from '../styles/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,8 +41,8 @@ export default function AppNavigation() {
   return <Tab.Navigator
     screenOptions={setScreenOptions}
     tabBarOptions={{
-      activeTintColor: '#4da0c0',
-      inactiveTintColor: '#000000',
+      activeTintColor: blue,
+      inactiveTintColor: black,
       showLabel: false
     }}
   >

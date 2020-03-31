@@ -1,15 +1,12 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { Ionicons, Foundation } from '@expo/vector-icons'
+import { Ionicons, Foundation } from '@expo/vector-icons';
 import {
   Text,
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   ImageBackground
 } from 'react-native';
-import { white, black, red } from '../styles/colors';
+import { white, red } from '../styles/colors';
 // local files
 import Background from '../assets/backgorund.jpg';
 
