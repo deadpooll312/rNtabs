@@ -50,8 +50,7 @@ function FeedScreen(props) {
                 <Text style={styles.date}>22/6 - 1/8</Text>
               </View>
               <View style={{...styles.cardBody, ...styles.cardRow}}>
-                <Text style={styles.cardText}>Bygga exklusivt badrum i guld och machogny hos Greve von Dinkelspiel af
-                  ...</Text>
+                <Text style={styles.cardText}>Bygga exklusivt badrum i guld och machogny hos Greve von Dinkelspiel af ...</Text>
                 <Ionicons name="ios-arrow-forward" size={24} color={grey2}/>
               </View>
               <View style={{...styles.cardFooter, ...styles.cardRow}}>
