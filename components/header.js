@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: white,
-    fontSize: 16,
+    fontSize: 22,
   },
   background: {
     resizeMode: "cover",

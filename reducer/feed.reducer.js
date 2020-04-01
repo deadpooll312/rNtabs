@@ -10,13 +10,13 @@ const initialState = {
 export default function FeedReducer(state = initialState, action) {
   switch (action.type) {
     case `${FEED}${FULFILLED}`:
-      return { ...state, ...{ data: action.payload, fetched: true } }
+      return { ...state, ...{ data: action.payload, fetched: true } };
 
     case `${FEED}${REJECTED}`:
-      return { ...state, ...{ error: action.payload, fetched: true } }
+      return { ...state, ...{ error: action.payload, fetched: true } };
 
     case `${FEED}${PENDING}`:
-      return { ...state, ...{ fetched: false } }
+      return { ...state, ...{ fetched: false } };
 
     default:
       return state;

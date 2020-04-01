@@ -6,7 +6,7 @@ import promise from 'redux-promise-middleware'
 // local files
 import { reducer } from '../reducer';
 
-const middleware = composeWithDevTools(applyMiddleware(createLogger(), ReduxThunk, promise))
+const middleware = composeWithDevTools(applyMiddleware(createLogger(), ReduxThunk, promise));
 const store = createStore(reducer, middleware);
 
 export default store;
