@@ -2,10 +2,11 @@ import * as React from 'react';
 import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
 import HeaderOrder from '../components/headerOrder';
 
-export default function OrderScreen() {
+export default function OrderScreen(props) {
+  const { navigation } = props;
   return (
     <React.Fragment>
-      <HeaderOrder/>
+      <HeaderOrder navigation={navigation}/>
       <SafeAreaView style={styles.container}>
       
       </SafeAreaView>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 import Background from "../assets/backgorund.jpg";
 import { Ionicons } from '@expo/vector-icons';
 import { white, blue, grey2 } from '../styles/colors';
 import SwitchComponent from '../components/switchComponent'
 
 export default function HeaderOrder(props) {
+  const { navigation: { goBack } } = props;
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   
@@ -13,7 +14,9 @@ export default function HeaderOrder(props) {
     <View>
       <ImageBackground source={Background} style={styles.background}>
         <View style={{...styles.headerTitle, ...styles.row}}>
-          <Ionicons style={styles.headerBackIcon} name="ios-arrow-back" color={white} size={32}/>
+          <TouchableOpacity style={styles.headerBackIcon} onPress={() => goBack()}>
+            <Ionicons name="ios-arrow-back" color={white} size={32}/>
+          </TouchableOpacity>
           <Text style={styles.headerTitleText}>#321 Bygga Badrum</Text>
         </View>
         <View style={{...styles.headerMain, ...styles.row}}>
@@ -76,8 +79,11 @@ const styles = StyleSheet.create({
   },
   headerBackIcon: {
     position: 'absolute',
-    left: 15,
-    top: 43
+    left: 5,
+    top: 33,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    zIndex: 5
   },
   headerMain: {
     paddingHorizontal: 15,
