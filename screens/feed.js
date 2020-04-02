@@ -5,7 +5,8 @@ import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
-  View
+  View,
+  TouchableOpacity
 } from 'react-native';
 // local files
 import {initFeed} from '../actions/feed.action';
@@ -21,7 +22,7 @@ const items = [
 ];
 
 function FeedScreen(props) {
-  const {feed, initData} = props;
+  const {feed, initData, navigation} = props;
   
   React.useEffect(() => {
     initData();
@@ -43,7 +44,7 @@ function FeedScreen(props) {
       <ScrollView style={styles.scrollView}>
         {feed && feed.data && feed.data.map((item, index) => {
           return (
-            <View key={index} style={{...styles.row, ...styles.borderBottom}}>
+            <TouchableOpacity onPress={() => navigation.navigate("Order")} key={index} style={{...styles.row, ...styles.borderBottom}}>
               <View style={{...styles.cardHeader, ...styles.cardRow}}>
                 <Foundation style={{marginRight: 10}} name="clipboard-notes" size={24} color={black}/>
                 <Text style={styles.cardTitle}>#{item.id} {item.title}</Text>
@@ -57,7 +58,7 @@ function FeedScreen(props) {
                 <Ionicons name="ios-pin" size={18} color={blue} style={{marginRight: 15}}/>
                 <Text style={styles.cardLocationText}>Grev Magnigattan 22</Text>
               </View>
-            </View>
+            </TouchableOpacity>
           )
         })}
       </ScrollView>

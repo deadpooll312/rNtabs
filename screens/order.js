@@ -7,7 +7,7 @@ export default function OrderScreen() {
     <React.Fragment>
       <HeaderOrder/>
       <SafeAreaView style={styles.container}>
-        <Text>Order screen</Text>
+      
       </SafeAreaView>
     </React.Fragment>
   );

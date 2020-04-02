@@ -8,7 +8,6 @@ import SwitchComponent from '../components/switchComponent'
 export default function HeaderOrder(props) {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-  console.log(isEnabled);
   
   return (
     <View>
