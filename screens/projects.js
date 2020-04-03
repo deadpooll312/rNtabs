@@ -1,11 +1,20 @@
-import React from 'react';
-import {HeaderComponent} from "../components/header";
-import {SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import React, {useState, useEffect} from 'react';
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
 import RNPickerSelect from "react-native-picker-select";
 import {Foundation, Ionicons} from "@expo/vector-icons";
-import {black, blue, grey, grey2} from "../styles/colors";
-import {initFeed} from "../actions/feed.action";
 import {connect} from "react-redux";
+import {RadioButtons} from 'react-native-radio-buttons';
+// Local files
+import {initFeed} from "../actions/feed.action";
+import {HeaderComponent} from "../components/header";
+import {black, blue, grey, grey2} from "../styles/colors";
 
 const items = [
   {label: 'Football', value: 'football'},
@@ -13,10 +22,38 @@ const items = [
   {label: 'Hockey', value: 'hockey'},
 ];
 
-function ProjectsScreen(props) {
-  const { feed, initData, navigation } = props;
+const options = [
+  "Ongoing",
+  "Planned"
+];
+
+function renderOption(option, selected, onSelect, index) {
+  const style = selected ?
+    {...styles.selectContainer,...styles.selectContainerActive} :
+    styles.selectContainer;
   
-  React.useEffect(() => {
+  return (
+    <TouchableOpacity
+      activeOpacity={0.55}
+      onPress={onSelect}
+      key={index}
+    >
+      <View style={style}>
+        <Text style={styles.select}>{option}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
+function renderContainer(optionNodes) {
+  return <View style={styles.selectsWrapper}>{optionNodes}</View>;
+}
+
+function ProjectsScreen(props) {
+  const {feed, initData, navigation} = props;
+  const [selected, setSelected] = useState("Ongoing");
+  
+  useEffect(() => {
     initData();
   }, []);
   
@@ -24,6 +61,13 @@ function ProjectsScreen(props) {
     <HeaderComponent/>
     <SafeAreaView style={styles.container}>
       <View style={{...styles.row, ...styles.borderBottom}}>
+        <RadioButtons
+          options={options}
+          onSelection={selected => setSelected(selected)}
+          selectedOption={selected}
+          renderOption={renderOption}
+          renderContainer={renderContainer}
+        />
         <View style={styles.dropdown}>
           <RNPickerSelect
             placeholder={{label: 'Select value'}}
@@ -36,14 +80,20 @@ function ProjectsScreen(props) {
       <ScrollView style={styles.scrollView}>
         {feed && feed.data && feed.data.map((item, index) => {
           return (
-            <TouchableOpacity onPress={() => navigation.navigate("Order")} key={index} style={{...styles.row, ...styles.borderBottom}}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Order")}
+              key={index}
+              style={{...styles.row, ...styles.borderBottom}}
+              activeOpacity={0.55}
+            >
               <View style={{...styles.cardHeader, ...styles.cardRow}}>
                 <Foundation style={{marginRight: 10}} name="clipboard-notes" size={24} color={black}/>
                 <Text style={styles.cardTitle}>#{item.id} {item.title}</Text>
                 <Text style={styles.date}>22/6 - 1/8</Text>
               </View>
               <View style={{...styles.cardBody, ...styles.cardRow}}>
-                <Text style={styles.cardText}>Bygga exklusivt badrum i guld och machogny hos Greve von Dinkelspiel af ...</Text>
+                <Text style={styles.cardText}>Bygga exklusivt badrum i guld och machogny hos Greve von Dinkelspiel af
+                  ...</Text>
                 <Ionicons name="ios-arrow-forward" size={24} color={grey2}/>
               </View>
               <View style={{...styles.cardFooter, ...styles.cardRow}}>
@@ -113,6 +163,24 @@ const styles = StyleSheet.create({
   cardFooter: {},
   cardLocationText: {
     color: blue
+  },
+  select: {
+    fontSize: 16,
+    fontFamily: 'lato',
+    color: black
+  },
+  selectsWrapper: {
+    flexDirection: 'row',
+    marginBottom: 16
+  },
+  selectContainer: {
+    marginRight: 25,
+    borderColor: 'transparent',
+    borderBottomWidth: 2,
+    paddingBottom: 6,
+  },
+  selectContainerActive: {
+    borderColor: blue
   }
 });
 

@@ -1,17 +1,15 @@
 import * as React from 'react';
-import { Ionicons, Foundation} from '@expo/vector-icons';
 import {
   Text,
   StyleSheet,
   View,
-  ImageBackground,
-  Image
+  ImageBackground
 } from 'react-native';
-import { white, red } from '../styles/colors';
 // local files
 import Background from '../assets/header-background.jpg';
 import ListIconComponent from "./icons/list";
 import AlarmIconComponent from "./icons/alarm";
+import { white, red } from '../styles/colors';
 
 export function HeaderComponent(props) {
   return <View style={styles.container}>
