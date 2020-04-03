@@ -14,11 +14,12 @@ import {RadioButtons} from 'react-native-radio-buttons';
 // Local files
 import {initFeed} from "../actions/feed.action";
 import {HeaderComponent} from "../components/header";
-import {black, blue, grey, grey2} from "../styles/colors";
+import {black, blue, grey, grey2, red, white} from "../styles/colors";
+import TriangleIconComponent from "../components/icons/triangle";
 
 const items = [
-  {label: 'Football', value: 'football'},
-  {label: 'Baseball', value: 'baseball'},
+  {label: 'Sort by finish date', value: 'finishDate'},
+  {label: 'Sort by some', value: 'some'},
   {label: 'Hockey', value: 'hockey'},
 ];
 
@@ -51,7 +52,8 @@ function renderContainer(optionNodes) {
 
 function ProjectsScreen(props) {
   const {feed, initData, navigation} = props;
-  const [selected, setSelected] = useState("Ongoing");
+  const [radioValue, setRadioValue] = useState("Ongoing");
+  const [selectValue, setSelected] = useState("finishDate");
   
   useEffect(() => {
     initData();
@@ -60,21 +62,22 @@ function ProjectsScreen(props) {
   return <React.Fragment>
     <HeaderComponent/>
     <SafeAreaView style={styles.container}>
-      <View style={{...styles.row, ...styles.borderBottom}}>
+      <View style={{...styles.row, ...styles.sortContainer}}>
         <RadioButtons
           options={options}
-          onSelection={selected => setSelected(selected)}
-          selectedOption={selected}
+          onSelection={selected => setRadioValue(selected)}
+          selectedOption={radioValue}
           renderOption={renderOption}
           renderContainer={renderContainer}
         />
         <View style={styles.dropdown}>
           <RNPickerSelect
-            placeholder={{label: 'Select value'}}
-            onValueChange={(value) => console.log(value)}
+            value={selectValue}
+            placeholder={{}}
+            onValueChange={(value) => setSelected(value)}
             items={items}
           />
-          <Ionicons style={styles.angleIcon} name="ios-arrow-dropdown-circle" size={12} color={blue}/>
+          <TriangleIconComponent style={styles.angleIcon} color={blue}/>
         </View>
       </View>
       <ScrollView style={styles.scrollView}>
@@ -112,6 +115,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+  sortContainer: {
+    paddingTop: 24,
+    paddingBottom: 13,
+    shadowColor: black,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 4,
+    backgroundColor: white
+  },
   scrollView: {
     paddingHorizontal: 0,
   },
@@ -120,20 +133,19 @@ const styles = StyleSheet.create({
     textAlign: 'left'
   },
   row: {
-    paddingHorizontal: 20,
-    paddingVertical: 10
+    paddingHorizontal: 16
   },
   dropdown: {
-    width: 200
+    width: 115
   },
   angleIcon: {
     position: 'absolute',
-    bottom: 0,
-    right: 0
+    bottom: 2,
+    right: -10
   },
   borderBottom: {
     borderBottomWidth: 2,
-    borderColor: grey,
+    borderColor: 'rgba(0, 0, 0, 0.1)',
     borderStyle: 'solid'
   },
   cardRow: {
