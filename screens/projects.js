@@ -16,6 +16,7 @@ import {initFeed} from "../actions/feed.action";
 import {HeaderComponent} from "../components/header";
 import {black, blue, grey, grey2, red, white} from "../styles/colors";
 import TriangleIconComponent from "../components/icons/triangle";
+import ProjectItemComponent from "../components/projectItem";
 
 const items = [
   {label: 'Sort by finish date', value: 'finishDate'},
@@ -83,27 +84,13 @@ function ProjectsScreen(props) {
       <ScrollView style={styles.scrollView}>
         {feed && feed.data && feed.data.map((item, index) => {
           return (
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Order")}
+            <ProjectItemComponent
               key={index}
-              style={{...styles.row, ...styles.borderBottom}}
-              activeOpacity={0.55}
-            >
-              <View style={{...styles.cardHeader, ...styles.cardRow}}>
-                <Foundation style={{marginRight: 10}} name="clipboard-notes" size={24} color={black}/>
-                <Text style={styles.cardTitle}>#{item.id} {item.title}</Text>
-                <Text style={styles.date}>22/6 - 1/8</Text>
-              </View>
-              <View style={{...styles.cardBody, ...styles.cardRow}}>
-                <Text style={styles.cardText}>Bygga exklusivt badrum i guld och machogny hos Greve von Dinkelspiel af
-                  ...</Text>
-                <Ionicons name="ios-arrow-forward" size={24} color={grey2}/>
-              </View>
-              <View style={{...styles.cardFooter, ...styles.cardRow}}>
-                <Ionicons name="ios-pin" size={18} color={blue} style={{marginRight: 15}}/>
-                <Text style={styles.cardLocationText}>Grev Magnigattan 22</Text>
-              </View>
-            </TouchableOpacity>
+              title={item.title}
+              id={item.id}
+              navigation={navigation}
+              style={styles.row}
+            />
           )
         })}
       </ScrollView>
@@ -123,7 +110,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 4,
-    backgroundColor: white
+    backgroundColor: white,
+    zIndex: 5
   },
   scrollView: {
     paddingHorizontal: 0,
@@ -143,38 +131,11 @@ const styles = StyleSheet.create({
     bottom: 2,
     right: -10
   },
-  borderBottom: {
-    borderBottomWidth: 2,
-    borderColor: 'rgba(0, 0, 0, 0.1)',
-    borderStyle: 'solid'
-  },
-  cardRow: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  cardHeader: {
-    paddingRight: 40,
-    marginBottom: 5
-  },
   cardTitle: {
     flexGrow: 5
   },
   date: {
     color: grey2
-  },
-  cardBody: {
-    marginBottom: 10
-  },
-  cardText: {
-    color: grey2,
-    fontSize: 16,
-    width: '85%',
-    marginRight: 20,
-    flexGrow: 5
-  },
-  cardFooter: {},
-  cardLocationText: {
-    color: blue
   },
   select: {
     fontSize: 16,
