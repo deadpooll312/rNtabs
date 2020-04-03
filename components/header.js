@@ -9,26 +9,25 @@ import {
 } from 'react-native';
 import { white, red } from '../styles/colors';
 // local files
-import Background from '../assets/backgorund.jpg';
+import Background from '../assets/header-background.jpg';
 import ListIconComponent from "./icons/list";
+import AlarmIconComponent from "./icons/alarm";
 
 export function HeaderComponent(props) {
   return <View style={styles.container}>
     <ImageBackground source={Background} style={styles.background}>
       <View style={styles.wrapper}>
-        <View style={styles.notification}>
-          <View style={styles.notificationParent}>
-            <View style={styles.notificationTextContainer}>
-              <Text style={styles.notificationText}>9</Text>
-            </View>
-            <Ionicons name="ios-notifications" size={34} color={white} />
-          </View>
-        </View>
         <View style={styles.headerTitle}>
           <ListIconComponent
             style={{marginRight: 20}}
           />
           <Text style={styles.titleText}>WORK ORDERS</Text>
+          <View>
+            <AlarmIconComponent/>
+            <View style={styles.notificationTextContainer}>
+              <Text style={styles.notificationText}>3</Text>
+            </View>
+          </View>
         </View>
       </View>
     </ImageBackground>
@@ -40,32 +39,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
   },
   wrapper: {
-    paddingHorizontal: 15,
-    paddingTop: 20,
-    paddingBottom: 20
-  },
-  notification: {
-    alignItems: 'flex-end'
-  },
-  notificationParent: {
-    position: 'relative',
-    paddingRight: 10,
+    paddingTop: 68,
+    paddingBottom: 25,
+    paddingHorizontal: 24
   },
   notificationTextContainer: {
-    position: 'absolute',
-    top: -2,
-    right: -5,
+    width: 16,
+    height: 16,
     backgroundColor: red,
-    width: 18,
-    height: 18,
+    borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 9,
-    zIndex: 10
+    position: 'absolute',
+    top: -5.5,
+    right: -13
   },
   notificationText: {
     color: white,
-    fontSize: 10,
+    fontFamily: 'lato-bold',
+    fontSize: 10
   },
   headerTitle: {
     flexDirection: 'row',
@@ -73,7 +65,9 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: white,
-    fontSize: 22,
+    fontSize: 20,
+    fontFamily: 'lato-bold',
+    flexGrow: 5
   },
   background: {
     resizeMode: "cover",
