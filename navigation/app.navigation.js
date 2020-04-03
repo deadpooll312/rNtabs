@@ -1,7 +1,5 @@
 import * as React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Ionicons} from "@expo/vector-icons";
 // local files
 import {black, blue} from "../styles/colors";
 import HomeScreen from "../screens/home";

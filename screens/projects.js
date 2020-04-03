@@ -8,13 +8,12 @@ import {
   View
 } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
-import {Foundation, Ionicons} from "@expo/vector-icons";
 import {connect} from "react-redux";
 import {RadioButtons} from 'react-native-radio-buttons';
 // Local files
 import {initFeed} from "../actions/feed.action";
 import {HeaderComponent} from "../components/header";
-import {black, blue, grey, grey2, red, white} from "../styles/colors";
+import {black, blue, white} from "../styles/colors";
 import TriangleIconComponent from "../components/icons/triangle";
 import ProjectItemComponent from "../components/projectItem";
 
