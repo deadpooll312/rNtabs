@@ -1,10 +1,16 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+// local files
+import {createStackNavigator} from '@react-navigation/stack';
+import ProjectsScreen from "./projects";
+import OrderScreen from "./order";
 
-export default function HomeScreen() {
+const Stack = createStackNavigator();
+
+export default function HomeScreen(props) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home screen</Text>
-    </View>
-  );
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={ProjectsScreen}/>
+      <Stack.Screen name="Order" component={OrderScreen}/>
+    </Stack.Navigator>
+  )
 }

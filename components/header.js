@@ -1,14 +1,16 @@
 import * as React from 'react';
-import { Ionicons, Foundation } from '@expo/vector-icons';
+import { Ionicons, Foundation} from '@expo/vector-icons';
 import {
   Text,
   StyleSheet,
   View,
-  ImageBackground
+  ImageBackground,
+  Image
 } from 'react-native';
 import { white, red } from '../styles/colors';
 // local files
 import Background from '../assets/backgorund.jpg';
+import ListIconComponent from "./icons/list";
 
 export function HeaderComponent(props) {
   return <View style={styles.container}>
@@ -23,8 +25,10 @@ export function HeaderComponent(props) {
           </View>
         </View>
         <View style={styles.headerTitle}>
-          <Foundation style={{marginRight: 10}} name="clipboard-notes" size={34} color={white} />
-          <Text style={styles.titleText}>Arbetsordrar</Text>
+          <ListIconComponent
+            style={{marginRight: 20}}
+          />
+          <Text style={styles.titleText}>WORK ORDERS</Text>
         </View>
       </View>
     </ImageBackground>

@@ -55,7 +55,8 @@ export default function HeaderOrder(props) {
 
 const styles = StyleSheet.create({
   background: {
-    overflow: 'hidden'
+    overflow: 'hidden',
+    resizeMode: "cover"
   },
   headerTitle: {
     paddingTop: 45,
