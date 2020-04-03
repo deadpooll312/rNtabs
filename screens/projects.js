@@ -77,6 +77,16 @@ function ProjectsScreen(props) {
             placeholder={{}}
             onValueChange={(value) => setSelected(value)}
             items={items}
+            style={{
+              inputIOS: {
+                fontSize: 14,
+                fontFamily: 'lato'
+              },
+              inputAndroid: {
+                fontSize: 14,
+                fontFamily: 'lato'
+              },
+            }}
           />
           <TriangleIconComponent style={styles.angleIcon} color={blue}/>
         </View>
@@ -130,12 +140,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 2,
     right: -10
-  },
-  cardTitle: {
-    flexGrow: 5
-  },
-  date: {
-    color: grey2
   },
   select: {
     fontSize: 16,

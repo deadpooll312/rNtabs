@@ -1,8 +1,10 @@
 import React from 'react';
 import {Text, TouchableOpacity, View, StyleSheet} from "react-native";
-import {Foundation, Ionicons} from "@expo/vector-icons";
+// local files
 import {black, blue, grey2} from "../styles/colors";
 import ListIconComponent from "./icons/list";
+import ArrowRightIconComponent from "./icons/arrowRight";
+import MapMarkerIconComponent from "./icons/mapMarker";
 
 export default function ProjectItemComponent(props) {
   const { navigation, style, title, id } = props;
@@ -14,17 +16,17 @@ export default function ProjectItemComponent(props) {
     >
       <View style={{...styles.header, ...styles.row}}>
         <ListIconComponent color={black} width={20} height={20}/>
-        <Text style={styles.cardTitle}>#{id} {title}</Text>
+        <Text style={styles.title}>#{id} {title}</Text>
         <Text style={styles.date}>22/6 - 1/8</Text>
       </View>
       <View style={{...styles.body, ...styles.row}}>
         <Text style={styles.text}>
           Bygga exklusivt badrum i guld och machogny hos Greve von Dinkelspiel af ...
         </Text>
-        <Ionicons name="ios-arrow-forward" size={24} color={grey2}/>
+       <ArrowRightIconComponent/>
       </View>
       <View style={styles.row}>
-        <Ionicons name="ios-pin" size={18} color={blue} style={{marginRight: 15}}/>
+        <MapMarkerIconComponent/>
         <Text style={styles.locationText}>Grev Magnigattan 22</Text>
       </View>
     </TouchableOpacity>
@@ -43,23 +45,35 @@ const styles = StyleSheet.create({
   },
   header: {
     paddingRight: 40,
-    marginBottom: 5
+    marginBottom: 8
+  },
+  title: {
+    flexGrow: 5,
+    marginLeft: 15,
+    textTransform: 'uppercase',
+    fontFamily: 'lato-bold',
+    fontSize: 14
+  },
+  date: {
+    color: grey2,
+    fontSize: 14
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center'
   },
   body: {
-    marginBottom: 10
+    marginBottom: 16
   },
   text: {
     color: grey2,
     fontSize: 16,
-    width: '85%',
-    marginRight: 20,
+    width: 300,
+    marginRight: 28,
     flexGrow: 5
   },
   locationText: {
-    color: blue
+    color: blue,
+    marginLeft: 14
   },
 });
