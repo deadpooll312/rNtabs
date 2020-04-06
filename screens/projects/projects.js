@@ -52,7 +52,10 @@ function ProjectsScreen({ navigation }) {
             placeholder={{}}
             onValueChange={value => setSelected(value)}
             items={items}
-            style={styles.pickerStyles}
+            style={{
+              inputIOS: styles.inputIOS,
+              inputAndroid: styles.inputAndroid
+            }}
           />
           <TriangleIconComponent style={styles.angleIcon} color={blue} />
         </View>

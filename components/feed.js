@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView } from "react-native";
 // local files
-import ProjectItemComponent from "./projectItem";
+import { ProjectItemComponent } from "./project-item";
 
 export const FeedComponent = React.memo(({ feed, navigation }) => {
   return (

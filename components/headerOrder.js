@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react
 import Background from "../assets/backgorund.jpg";
 import { Ionicons } from '@expo/vector-icons';
 import { white, blue, grey2 } from '../styles/colors';
-import SwitchComponent from '../components/switchComponent'
+import SwitchComponent from './switch-component'
 
 export default function HeaderOrder(props) {
   const { navigation: { goBack } } = props;
