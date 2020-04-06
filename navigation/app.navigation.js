@@ -29,7 +29,6 @@ export default function AppNavigation() {
         inactiveTintColor: black,
         showLabel: false,
         style: {
-          // height: 76,
           justifyContent: 'flex-start'
         }
       }}
