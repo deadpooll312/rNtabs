@@ -7,36 +7,32 @@ const styles = StyleSheet.create({
     resizeMode: "cover"
   },
   headerTitle: {
-    paddingTop: 45,
+    paddingTop: 70,
     paddingBottom: 15,
     paddingHorizontal: 15,
     alignItems: 'center',
-    position: 'relative',
-    borderWidth: 1,
-    borderStyle: 'dotted',
-    borderRadius: 1,
-    borderColor: white,
-    marginRight: -1,
-    marginLeft: -1,
-    marginTop: -1
+    position: 'relative'
   },
   headerTitleText: {
-    fontSize: 24,
+    fontSize: 20,
+    fontFamily: 'lato',
     color: white,
     flexGrow: 5,
     textAlign: 'center'
   },
   headerBackIcon: {
     position: 'absolute',
-    left: 5,
-    top: 33,
+    left: 13,
+    bottom: 6,
     paddingVertical: 10,
     paddingHorizontal: 10,
     zIndex: 5
   },
   headerMain: {
-    paddingHorizontal: 15,
-    paddingVertical: 20,
+    paddingTop: 10,
+    paddingBottom: 14,
+    paddingLeft: 20,
+    paddingRight: 24,
     justifyContent: 'space-between'
   },
   row: {
@@ -45,31 +41,41 @@ const styles = StyleSheet.create({
   headerLocation: {
     alignItems: 'center',
   },
+  headerLocationIcon: {
+    marginRight: 20,
+    marginLeft: -5
+  },
   headerCol: {
     width: '45%',
   },
-  addressLarge: {
-    color: white,
-    fontSize: 20
+  address: {
+    fontFamily: 'lato',
+    fontSize: 14,
+    color: white
   },
-  addressSmall: {
-    color: white,
-    fontSize: 16
+  addressOpacity: {
+    opacity: 0.55
   },
   headerBottom: {
     backgroundColor: 'rgba(0,0,0,0.5)',
-    paddingHorizontal: 15,
-    paddingVertical: 5,
-    justifyContent: 'flex-end',
+    paddingHorizontal: 17,
+    paddingVertical: 16,
+    justifyContent: 'flex-start',
     marginRight: -40
   },
   checkMarksBlock: {
     alignItems: 'center',
-    marginRight: 40
+    marginRight: 40,
+    opacity: 0.5,
+  },
+  checkMarksBlockActive: {
+    opacity: 1,
   },
   checkText: {
     color: white,
-    fontSize: 18
+    fontSize: 14,
+    fontFamily: 'lato',
+    marginLeft: 8
   }
 });
 
