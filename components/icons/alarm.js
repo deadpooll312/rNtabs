@@ -1,6 +1,6 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
-import {white} from "../../styles/colors";
+import { white } from "../../styles/colors";
 
 function AlarmIconComponent(props) {
   const { width, height, color, style } = props;
@@ -18,7 +18,7 @@ function AlarmIconComponent(props) {
         fill={color ? color : white}
       />
     </Svg>
-  )
+  );
 }
 
 export default AlarmIconComponent;

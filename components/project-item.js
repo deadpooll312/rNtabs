@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, TouchableOpacity, View, StyleSheet} from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 // local files
-import {black, blue, grey2} from "../styles/colors";
+import { black } from "../styles/colors";
 import ListIconComponent from "./icons/list";
 import ArrowRightIconComponent from "./icons/arrowRight";
 import MapMarkerIconComponent from "./icons/mapMarker";
+import styles from './styles/project-item.styles';
 
-export default function ProjectItemComponent(props) {
+export const ProjectItemComponent = React.memo((props) => {
   const { navigation, style, title, id } = props;
   return (
     <TouchableOpacity
@@ -31,49 +32,4 @@ export default function ProjectItemComponent(props) {
       </View>
     </TouchableOpacity>
   )
-}
-
-const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 24,
-    backgroundColor: '#fafafa'
-  },
-  borderBottom: {
-    borderBottomWidth: 2,
-    borderColor: 'rgba(0, 0, 0, 0.1)',
-    borderStyle: 'solid'
-  },
-  header: {
-    paddingRight: 40,
-    marginBottom: 8
-  },
-  title: {
-    flexGrow: 5,
-    marginLeft: 15,
-    textTransform: 'uppercase',
-    fontFamily: 'lato-bold',
-    fontSize: 14
-  },
-  date: {
-    color: grey2,
-    fontSize: 14
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  body: {
-    marginBottom: 16
-  },
-  text: {
-    color: grey2,
-    fontSize: 16,
-    width: 300,
-    marginRight: 28,
-    flexGrow: 5
-  },
-  locationText: {
-    color: blue,
-    marginLeft: 14
-  },
 });
