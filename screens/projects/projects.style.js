@@ -32,11 +32,6 @@ const styles = StyleSheet.create({
     bottom: 2,
     right: -10
   },
-  select: {
-    fontSize: 16,
-    fontFamily: "lato",
-    color: black
-  },
   row: {
     paddingHorizontal: 15,
   },

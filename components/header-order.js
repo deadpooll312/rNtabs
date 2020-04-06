@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
-import Background from "../assets/backgorund.jpg";
 import { Ionicons } from '@expo/vector-icons';
+// local files
+import Background from "../assets/backgorund.jpg";
 import { white, blue, grey2 } from '../styles/colors';
-import SwitchComponent from './switch-component'
+import { SwitchComponent } from './switch-component';
 import styles from "./styles/header-order.styles";
 
 export const HeaderOrder = React.memo((props) => {

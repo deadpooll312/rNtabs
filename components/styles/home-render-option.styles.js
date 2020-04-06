@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { blue } from '../../styles/colors';
+import {black, blue} from '../../styles/colors';
 
 const styles = StyleSheet.create({
   selectContainer: {
@@ -10,6 +10,11 @@ const styles = StyleSheet.create({
   },
   selectContainerActive: {
     borderColor: blue
+  },
+  select: {
+    fontSize: 16,
+    fontFamily: "lato",
+    color: black
   },
 });
 

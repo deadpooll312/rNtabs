@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, Switch } from 'react-native';
-import {white} from "../styles/colors";
+import { View, Text, Switch } from 'react-native';
+// local files
+import styles from './styles/switch-component.styles';
 
-export default function SwitchComponent(props) {
+export const SwitchComponent = React.memo((props) => {
   const { toggleSwitch, switchValue, trackColor, thumbColor, switchLabel } = props;
   return (
     <View style={styles.container}>
@@ -12,21 +13,7 @@ export default function SwitchComponent(props) {
         value={switchValue}
         trackColor={trackColor}
         thumbColor={thumbColor}
-        // style={{ transform: [{ scaleX: .9 }, { scaleY: .9 }] }}
-        // ios_backgroundColor={iosBackgroundColor}
       />
     </View>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  label: {
-    color: white,
-    fontSize: 16,
-    marginRight: 10
-  }
 });

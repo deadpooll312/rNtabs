@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator, StatusBar } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
 import { useDispatch, useSelector } from "react-redux";
 import { RadioButtons } from "react-native-radio-buttons";
@@ -37,6 +37,7 @@ function ProjectsScreen({ navigation }) {
 
   return (
     <React.Fragment>
+      <StatusBar barStyle="light-content"/>
       <HeaderComponent />
       <View style={{ ...styles.row, ...styles.sortContainer }}>
         <RadioButtons
