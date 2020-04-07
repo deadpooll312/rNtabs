@@ -2,9 +2,7 @@ import React from 'react';
 import { Text, TouchableOpacity, View } from "react-native";
 // local files
 import { black } from "../styles/colors";
-import ListIconComponent from "./icons/list";
-import ArrowRightIconComponent from "./icons/arrowRight";
-import MapMarkerIconComponent from "./icons/mapMarker";
+import { ListIconComponent, ArrowRightIconComponent, MapMarkerIconComponent } from "./icons";
 import styles from './styles/project-item.styles';
 
 export const ProjectItemComponent = React.memo((props) => {

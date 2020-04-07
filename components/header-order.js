@@ -5,9 +5,7 @@ import Background from "../assets/header-background-order.jpg";
 import { white, blue } from '../styles/colors';
 import { SwitchComponent } from './switch-component';
 import styles from "./styles/header-order.styles";
-import ArrowLeftIconComponent from "./icons/arrowLeft";
-import MapMarkerIconComponent from "./icons/mapMarker";
-import CheckMarkIconComponent from "./icons/checkmark";
+import { ArrowLeftIconComponent, MapMarkerIconComponent, CheckMarkIconComponent } from "./icons";
 
 export const HeaderOrder = React.memo((props) => {
   const { navigation: { goBack } } = props;

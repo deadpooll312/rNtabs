@@ -2,7 +2,7 @@ import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 import { white } from "../../styles/colors";
 
-function AlarmIconComponent(props) {
+export const AlarmIconComponent = React.memo((props) => {
   const { width, height, color, style } = props;
   return (
     <Svg
@@ -19,6 +19,4 @@ function AlarmIconComponent(props) {
       />
     </Svg>
   );
-}
-
-export default AlarmIconComponent;
+});

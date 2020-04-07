@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RadioButtons } from "react-native-radio-buttons";
 // Local files
 import { initFeed } from "../../actions/feed.action";
-import TriangleIconComponent from "../../components/icons/triangle";
+import { TriangleIconComponent } from "../../components/icons";
 import styles from "./projects.style";
 import { feedSelector } from "../../store/selectors";
 import { blue } from "../../styles/colors";

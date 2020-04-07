@@ -1,15 +1,18 @@
 import * as React from 'react';
-import { SafeAreaView } from 'react-native';
+import { ScrollView } from 'react-native';
+// local files
 import { HeaderOrder } from '../components';
+import { OrderProperty } from "../components";
+import { AlarmIconComponent } from "../components/icons";
 
 export default function OrderScreen(props) {
   const { navigation } = props;
   return (
     <React.Fragment>
       <HeaderOrder navigation={navigation}/>
-      <SafeAreaView>
+      <ScrollView>
       
-      </SafeAreaView>
+      </ScrollView>
     </React.Fragment>
   );
 }

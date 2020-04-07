@@ -2,7 +2,7 @@ import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 import {white} from "../../styles/colors";
 
-function CalendarIconComponent(props) {
+export const CalendarIconComponent = React.memo((props) => {
   const { width, height, color, style } = props;
   return (
     <Svg
@@ -23,6 +23,4 @@ function CalendarIconComponent(props) {
       />
     </Svg>
   )
-}
-
-export default CalendarIconComponent;
+});

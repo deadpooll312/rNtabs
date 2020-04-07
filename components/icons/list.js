@@ -2,7 +2,7 @@ import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 import {white} from "../../styles/colors";
 
-function ListIconComponent(props) {
+export const ListIconComponent = React.memo((props) => {
   const { width, height, color, style } = props;
   return (
     <Svg
@@ -27,6 +27,4 @@ function ListIconComponent(props) {
       />
     </Svg>
   )
-}
-
-export default ListIconComponent;
+});

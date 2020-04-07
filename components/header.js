@@ -6,8 +6,7 @@ import {
 } from 'react-native';
 // local files
 import Background from '../assets/header-background.jpg';
-import ListIconComponent from "./icons/list";
-import AlarmIconComponent from "./icons/alarm";
+import { ListIconComponent, AlarmIconComponent } from "./icons";
 import styles from './styles/header.styles';
 
 export const HeaderComponent = React.memo((props) => {

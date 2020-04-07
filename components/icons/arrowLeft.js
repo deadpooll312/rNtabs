@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
-function ArrowLeftIconComponent(props) {
+export const ArrowLeftIconComponent = React.memo((props) => {
   const { width, height, color, style } = props;
   return (
     <Svg
@@ -18,6 +18,4 @@ function ArrowLeftIconComponent(props) {
       />
     </Svg>
   )
-}
-
-export default ArrowLeftIconComponent;
+});

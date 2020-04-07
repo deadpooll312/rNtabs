@@ -2,7 +2,7 @@ import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 import {white} from "../../styles/colors";
 
-function TriangleIconComponent(props) {
+export const TriangleIconComponent = React.memo((props) => {
   const { width, height, color, style } = props;
   return (
     <Svg
@@ -16,6 +16,4 @@ function TriangleIconComponent(props) {
       <Path d="M10 10V0L0 10h10z" fill={color ? color : white} />
     </Svg>
   )
-}
-
-export default TriangleIconComponent;
+});

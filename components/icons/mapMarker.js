@@ -2,7 +2,7 @@ import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 import {blue} from "../../styles/colors";
 
-function MapMarkerIconComponent(props) {
+export const MapMarkerIconComponent = React.memo((props) => {
   const { width, height, color, style } = props;
   return (
     <Svg
@@ -23,6 +23,4 @@ function MapMarkerIconComponent(props) {
       />
     </Svg>
   )
-}
-
-export default MapMarkerIconComponent;
+});

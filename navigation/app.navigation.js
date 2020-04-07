@@ -4,8 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {black, blue} from "../styles/colors";
 import HomeScreen from "../screens/home";
 import TimetableScreen from "../screens/timetable";
-import ListIconComponent from '../components/icons/list';
-import CalendarIconComponent from "../components/icons/calendar";
+import { ListIconComponent, CalendarIconComponent } from '../components/icons';
 
 const Tab = createBottomTabNavigator();
 
