@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {black} from "../../styles/colors";
+import {black, white} from "../../styles/colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
     borderColor: 'rgba(0, 0, 0, 0.1)',
     borderStyle: 'solid',
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    backgroundColor: white
   },
   title: {
     flexGrow: 5,

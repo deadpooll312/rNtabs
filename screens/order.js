@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { ScrollView } from 'react-native';
 // local files
-import { HeaderOrder } from '../components';
-import { OrderProperty } from "../components";
+import { HeaderOrder, OrderProperty, CommentsComponent } from '../components';
 import {
   PencilIconComponent,
   NotificationIconComponent,
@@ -11,6 +10,21 @@ import {
   CheckSquareIconComponent,
   FilesIconComponent
 } from "../components/icons";
+
+const comments = [
+  {
+    author: "Måndag",
+    date: "2 dec 15:45",
+    message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae cursus arcu, in efficitur felis. Praesent faucibus massai.",
+    avatar: "JL"
+  },
+  {
+    author: "Måndag",
+    date: "2 dec 13:45",
+    message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae cursus arcu, in efficitur felis. Praesent faucibus massai.",
+    avatar: "ÅE"
+  }
+];
 
 export default function OrderScreen(props) {
   const { navigation } = props;
@@ -54,6 +68,7 @@ export default function OrderScreen(props) {
           navigation={navigation}
           path="Home"
         />
+        <CommentsComponent comments={comments}/>
       </ScrollView>
     </React.Fragment>
   );
